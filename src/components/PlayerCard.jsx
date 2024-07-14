@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { data } from "../helper/data"
+// import { data } from "../helper/data"
 import "../App.css"
 
 
