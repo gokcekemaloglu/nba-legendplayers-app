@@ -13,6 +13,10 @@ const CardContainer = () => {
         setSearch(e.target.value)
     }
 
+    const handleClearSearch = () => {
+        setSearch("");
+      };
+
     const filteredPlayers = data.filter((e)=> e.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
 
     
@@ -28,6 +32,14 @@ const CardContainer = () => {
                 value={search}
                 onChange={handleSearchChange}
             />
+            {search && (
+          <span
+            className='clear-icon'
+            onClick={handleClearSearch}            
+          >
+            &times;
+          </span>
+        )}
         </div>
         <div className="card-container">
         {filteredPlayers.map((player, index)=>(
